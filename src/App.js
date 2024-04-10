@@ -22,6 +22,16 @@ export default function App() {
 
   return (
     <div>
+      <div style={{
+        width: '100vw',
+        height: 84,
+        background: 'black',
+        position: 'absolute',
+        top: 0, // Has gap at bottom if have this
+        // top: 1, // Displays fine if commented out
+        left: 0,
+        zIndex: 1000,
+      }}/>
       <div ref={mapContainer} className="map-container" />
     </div>
   );
