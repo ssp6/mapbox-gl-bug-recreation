@@ -17,6 +17,15 @@
   z-index: 1000;
 }
 
+.resize-button {
+  position: fixed;
+  right: 20px;
+  top: 200px;
+  font-size: 20px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
 .map {
   position: absolute;
   top: 0;
