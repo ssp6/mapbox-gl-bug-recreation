@@ -1,15 +1,14 @@
-import './App.css';
-import { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
+import React, { useRef, useEffect, useState } from 'react';
+import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
 
-function App() {
-  const mapContainer = useRef(null)
-  const map = useRef(null)
+export default function App() {
+  const mapContainer = useRef(null);
+  const map = useRef(null);
   const [lng, setLng] = useState(-70.9);
   const [lat, setLat] = useState(42.35);
-  const [zoom, setZoom] = useState(9)
+  const [zoom, setZoom] = useState(9);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -22,15 +21,8 @@ function App() {
   });
 
   return (
-    <div className="map-container">
-      {/* Fake Nav */}
-      <div className="fake-navbar" />
-      <div className="map" ref={mapContainer} />
-      <button className="resize-button" onClick={() => {
-        map.current?.resize()
-      }}>Resize</button>
+    <div>
+      <div ref={mapContainer} className="map-container" />
     </div>
-  )
+  );
 }
-
-export default App;
